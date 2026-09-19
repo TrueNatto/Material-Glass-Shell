@@ -1,0 +1,128 @@
+[app]
+overall = { }
+
+[manager]
+cwd              = { fg = "#e7e2d5" }
+find_keyword     = { fg = "#a7d0b7", bold = true }
+find_position    = { fg = "#ccc6b5" }
+symlink_target   = { fg = "#a7d0b7" }
+
+marker_copied    = { fg = "#d5c871" }
+marker_cut       = { fg = "#ffb4ab" }
+marker_marked    = { fg = "#a7d0b7" }
+marker_selected  = { fg = "#d5c871" }
+
+count_copied     = { fg = "#d5c871" }
+count_cut        = { fg = "#ffb4ab" }
+count_selected   = { fg = "#d5c871" }
+
+border_symbol    = " "
+border_style     = { fg = "#d5c871" }
+
+[indicator]
+parent   = { fg = "#cfc7a2" }
+current  = { fg = "#373100", bg = "#d5c871" }
+preview  = { fg = "#ccc6b5", bg = "#4a4739" }
+padding  = { open = "", close = "" }
+
+[tabs]
+active    = { fg = "#373100", bg = "#d5c871" }
+inactive  = { fg = "#ccc6b5" }
+sep_inner = { open = " ", close = " " }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#373100", bg = "#d5c871", bold = true }
+normal_alt  = { fg = "#ebe3bd", bg = "#4c472b" }
+select_main = { fg = "#113725", bg = "#a7d0b7", bold = true }
+select_alt  = { fg = "#ebe3bd", bg = "#4c472b" }
+unset_main  = { fg = "#ccc6b5", bg = "#4a4739", bold = true }
+unset_alt   = { fg = "#ccc6b5", bg = "#4a4739" }
+
+[status]
+overall          = { fg = "#373100", bg = "#d5c871" }
+# SỬA: Thêm ký tự bo tròn hai đầu cho toàn bộ thanh trạng thái phía dưới cùng
+sep_left         = { open = "", close = "" }
+sep_right        = { open = "", close = "" }
+perm_type        = { fg = "#cfc7a2" }
+perm_read        = { fg = "#cfc7a2" }
+perm_write       = { fg = "#d5c871" }
+perm_exec        = { fg = "#a7d0b7" }
+perm_sep         = { fg = "#4a4739" }
+progress_label   = { fg = "#e7e2d5" }
+progress_normal  = { fg = "#d5c871", bg = "#4a4739" }
+progress_error   = { fg = "#ffdad6", bg = "#93000a" }
+
+[which]
+border           = { fg = "#d5c871" }
+cols             = 3
+mask             = { bg = "#212017" }
+cand             = { fg = "#373100", bg = "#d5c871", bold = true }
+rest             = { fg = "#ccc6b5" }
+desc             = { fg = "#ccc6b5" }
+separator        = " -> "
+separator_style  = { fg = "#959181" }
+
+[confirm]
+border      = { fg = "#d5c871" }
+title       = { fg = "#e7e2d5" }
+body        = { fg = "#ccc6b5" }
+list        = { fg = "#e7e2d5" }
+btn_yes     = { fg = "#373100", bg = "#d5c871" }
+btn_no      = { fg = "#ccc6b5", bg = "#4a4739" }
+btn_labels  = ["Yes", "No"]
+
+[spot]
+border   = { fg = "#d5c871" }
+title    = { fg = "#e7e2d5" }
+tbl_col  = { fg = "#cfc7a2" }
+tbl_cell = { fg = "#ebe3bd", bg = "#4c472b" }
+
+[notify]
+title_info  = { fg = "#d5c871" }
+title_warn  = { fg = "#a7d0b7" }
+title_error = { fg = "#ffb4ab" }
+
+[pick]
+border   = { fg = "#d5c871" }
+active   = { fg = "#373100", bg = "#d5c871" }
+inactive = { fg = "#ccc6b5" }
+
+[input]
+border   = { fg = "#d5c871" }
+title    = { fg = "#e7e2d5" }
+value    = { fg = "#ccc6b5" }
+selected = { bg = "#4c472b" }
+
+[cmp]
+border       = { fg = "#959181" }
+active       = { fg = "#f2e48a", bg = "#504700" }
+inactive     = { fg = "#e7e2d5" }
+icon_file    = " "
+icon_folder  = " "
+icon_command = " "
+
+[tasks]
+border   = { fg = "#d5c871" }
+title    = { fg = "#e7e2d5" }
+hovered  = { fg = "#ebe3bd", bg = "#4c472b" }
+
+[help]
+border   = { fg = "#d5c871" }
+chord    = { fg = "#d5c871" }
+action   = { fg = "#ccc6b5" }
+hovered  = { fg = "#ebe3bd", bg = "#4c472b" }
+
+[filetype]
+rules = [
+    { url = "*/", fg = "#d5c871", bold = true },
+    { url = "*", is = "exec", fg = "#ffb4ab" },
+    { mime = "application/x-shellscript", fg = "#ffb4ab" },
+    { mime = "application/zip", fg = "#a7d0b7" },
+    { mime = "application/x-tar", fg = "#a7d0b7" },
+    { mime = "application/x-bzip2", fg = "#a7d0b7" },
+    { mime = "application/gzip", fg = "#a7d0b7" },
+    { url = "*", is = "link", fg = "#a7d0b7" },
+    { mime = "text/*", fg = "#e7e2d5" },
+    { url = "*", fg = "#ccc6b5" }
+]

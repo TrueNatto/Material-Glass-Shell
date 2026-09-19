@@ -1,0 +1,135 @@
+* {
+    font: "Inter Black 12";
+
+    bg           : rgba(16, 14, 7, 0.56);
+    bg-alt       : #212017;
+    fg           : #e7e2d5;
+    fg-muted     : #ccc6b5;
+    accent       : #d5c871;
+    accent-fg    : #373100;
+    sel-bg       : #d5c871;
+    sel-fg       : #373100;
+    border       : #d5c871;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+configuration {
+    drun-display-format: "{name}";
+    lines: 7;
+}
+
+window {
+    width: 600px;
+    location: center;
+    anchor: center;
+    background-color: @bg;
+    border-radius: 18px;
+    border: 1px solid;
+    border-color: @border;
+    padding: 18px 18px 8px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 12px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    text-color: @fg;
+    border-radius: 12px;
+    padding: 10px 14px;
+    children: [ entry ];
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @fg-muted;
+    font: "Inter Black 13";
+    border: 0;
+}
+prompt {
+    background-color: transparent;
+    text-color: @fg;
+    border: 0;
+}
+
+case-indicator {
+    background-color: transparent;
+    text-color: @fg-muted;
+    border: 0;
+}
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 7;
+    spacing: 4px;
+    fixed-height: false;
+    scrollbar: true;
+    border: 0;
+}
+
+scrollbar {
+    width: 3px;
+    handle-color: @accent;
+    handle-width: 3px;
+    border-radius: 4px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    border-radius: 7px;
+    border: 0;
+    padding: 11px 10px;
+    orientation: horizontal;
+    spacing: 10px;
+}
+
+element-icon {
+    size: 30px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color: @sel-bg;
+    text-color: @sel-fg;
+    border-radius: 10px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color: transparent;
+    text-color: @accent;
+}
+
+element selected.normal {
+    background-color: @sel-bg;
+    text-color: @sel-fg;
+    border-radius: 10px;
+}
+
+element selected.urgent,
+element selected.active {
+    background-color: @sel-bg;
+    text-color: @sel-fg;
+    border-radius: 10px;
+}

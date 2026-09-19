@@ -1,0 +1,124 @@
+{
+  "layer": "top",
+  "position": "top",
+  "output": ["*"],
+  "height": 54,
+  "mode": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "spacing": 2,
+  "reload_style_on_change": true,
+  "tooltip": false,
+
+  // ---------- Layout ----------
+  "modules-left": ["custom/logo", "hyprland/workspaces", "mpris"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "group/ctl", "custom/power"],
+
+  // ---------- Group pill: wifi + bluetooth + volume + backlight ----------
+  "group/ctl": {
+    "orientation": "inherit",
+    "modules": ["network", "bluetooth", "pulseaudio", "backlight"]
+  },
+
+  // ---------- Logo pill (accent, full circle) ----------
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "rofi -show drun -show-icons",
+    "on-click-right": "foot"
+  },
+
+  // ---------- Workspaces----------
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "sort-by": "number",
+    "persistent-workspaces": { "*": 5 },
+    "tooltip": false
+  },
+
+  // ---------- Media (MPRIS) ----------
+  "mpris": {
+    "player": "playerctld",
+    "format": "{status_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "format-stopped": "",
+    "max-length": 20,
+    "title-len": 28,
+    "status-icons": {
+      "playing": "  ",
+      "paused": "  ",
+      "stopped": ""
+    },
+    "on-click": "~/.config/quickshell/OpenScripts/MediaWidget.sh",
+    "on-click-right": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "tooltip": true,
+    "tooltip-format": "{status_icon} {title} ({position}/{length})"
+  },
+
+  // ---------- Clock (center) ----------
+  "clock": {
+    "format": "{:%d-%m %H:%M}",
+    "interval": 60,
+    "tooltip": false,
+    "on-click": "~/.config/quickshell/OpenScripts/ClockWidget.sh"
+  },
+
+  // ---------- Tray ----------
+  "tray": {
+    "spacing": 8,
+    "icon-size": 13
+  },
+
+  // ---------- Network ----------
+  "network": {
+    "format-wifi": "󰤨  {essid}",
+    "format-ethernet": "󰈀  Wired",
+    "format-disconnected": "󰤮  Disconnected",
+    "tooltip": false,
+    "on-click": "~/.config/quickshell/OpenScripts/CenterWidget.sh"
+  },
+
+  // ---------- Bluetooth ----------
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱  {device_alias}",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "tooltip": false,
+    "on-click": "~/.config/quickshell/OpenScripts/CenterWidget.sh"
+  },
+
+  // ---------- Pulseaudio (volume) ----------
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "~/.config/quickshell/OpenScripts/CenterWidget.sh",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip": false,
+    "scroll-step": 5
+  },
+
+  // ---------- Backlight (brightness) ----------
+  "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "tooltip": false,
+    "on-click": "~/.config/quickshell/OpenScripts/CenterWidget.sh",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  // ---------- Power pill (accent, full circle) ----------
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout -b 2 -c 0 -r 0 -m 0"
+  }
+}
