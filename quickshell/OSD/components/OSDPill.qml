@@ -1,1 +1,0 @@
-../../Clock/components/OSDPill.qml

@@ -1,1 +1,0 @@
-../../Clock/components/WaveCanvas.qml
