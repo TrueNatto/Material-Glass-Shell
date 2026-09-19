@@ -57,7 +57,7 @@ packages=(
   # Network & Hardware
   "networkmanager" "network-manager-applet" "networkmanager-dmenu"
   "bluez" "bluez-utils" "sof-firmware" "intel-ucode"
-  "btrfs-progs" "compsize" "cpupower"
+  "btrfs-progs" "compsize" "cpupower" "rofi-bluetooth"
   "smem" "zram-generator" "ufw" "grub"
 
   # Fonts & Themes
