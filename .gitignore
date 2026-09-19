@@ -1,6 +1,6 @@
-BraveSoftware/
-networkmanager-dmenu/
-yay/
-dconf/
-mimeapps.list
-gtk-3.0/
+.config/BraveSoftware/
+.config/networkmanager-dmenu/
+.config/yay/
+.config/dconf/
+.config/mimeapps.list
+.config/gtk-3.0/

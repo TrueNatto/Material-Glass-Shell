@@ -1,0 +1,1 @@
+../../Clock/components/QuickTile.qml

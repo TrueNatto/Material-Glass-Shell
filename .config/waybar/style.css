@@ -1,0 +1,138 @@
+@define-color base         #100e07;
+@define-color pill         rgba(33, 32, 23, 0.56);
+@define-color pillhover    rgba(44, 42, 33, 0.56);
+@define-color accent       #d5c871;
+@define-color accent_hover #504700;
+@define-color border       #d5c871;
+@define-color textdark     #e7e2d5;
+@define-color textlight    #ccc6b5;
+@define-color muted        #959181;
+
+* {
+    font-family: "Inter Black", "Symbols Only Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    min-height: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    color: @textdark;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+tooltip {
+    background: @base;
+    border-radius: 12px;
+    border: 1px solid @border;
+    padding: 6px 10px;
+    color: @textdark;
+}
+
+/* ---------- Pill chung ---------- */
+#workspaces, #mpris, #clock, #tray {
+    background-color: @pill;
+    margin: 6px 4px;
+    padding: 0 18px;
+    border-radius: 24px;
+    min-height: 28px;
+    border: none;
+}
+
+#mpris:hover, #clock:hover, #tray:hover {
+    background-color: @pillhover;
+}
+
+/* ---------- Group pill (wifi + bt + volume + backlight) ---------- */
+#ctl {
+    background-color: @pill;
+    margin: 6px 4px;
+    padding: 0 10px;
+    border-radius: 24px;
+    min-height: 28px;
+    border: none;
+}
+
+#ctl #network, #ctl #bluetooth, #ctl #pulseaudio, #ctl #backlight {
+    background-color: transparent;
+    margin: 0;
+    padding: 0 5px;
+    border-radius: 24px;
+    min-height: 28px;
+    border: none;
+}
+
+#ctl #bluetooth { padding: 0 8px; }
+
+#ctl #network:hover, #ctl #bluetooth:hover,
+#ctl #pulseaudio:hover, #ctl #backlight:hover {
+    background-color: transparent;
+}
+
+/* ---------- Logo & Power: bo góc 14px ---------- */
+#custom-logo, #custom-power {
+    background-color: @accent;
+    color: @base;
+    font-size: 24px;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0 14px;
+    margin: 3px 4px;
+    border-radius: 14px;
+    border: 1px solid @accent;
+}
+
+#custom-logo { margin-left: 8px; }
+#custom-power { margin-right: 8px; font-size: 22px; }
+
+#custom-logo:hover, #custom-power:hover {
+    background-color: @accent_hover;
+    border-color: @accent_hover;
+    color: @base;
+}
+
+/* ---------- Workspaces ---------- */
+#workspaces { padding: 0 6px; }
+
+#workspaces button {
+    background-color: transparent;
+    border-radius: 100px;
+    padding: 0 10px;
+    margin: 2px;
+}
+
+#workspaces button.active { background-color: @accent; color: @base; }
+
+/* Chặn hover từ theme mặc định của waybar */
+#workspaces button:hover,
+#workspaces button.workspace-hover {
+    background-color: transparent;
+}
+
+#workspaces button.urgent { background-color: @accent; color: @base; }
+#workspaces button.empty { color: @muted; }
+
+/* ---------- Clock ---------- */
+#clock {
+    padding: 0 22px;
+    font-size: 14px;
+    font-weight: 700;
+    color: @accent;
+}
+
+/* ---------- MPRIS ---------- */
+#mpris { padding: 0 20px; }
+#mpris.paused { color: @muted; font-style: italic; }
+
+/* ---------- Tray ---------- */
+#tray { padding: 0 14px; }
+#tray > .needs-attention { background-color: @accent; border-radius: 100px; }
+#tray menu {
+    background-color: @base;
+    border-radius: 10px;
+    padding: 4px 0;
+    border: 1px solid @border;
+}

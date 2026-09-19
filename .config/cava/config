@@ -1,0 +1,26 @@
+[general]
+framerate = 60
+autosens = 1
+sensitivity = 100
+bars = 0
+bar_width = 2
+bar_spacing = 1
+
+[input]
+method = pipewire
+source = auto
+
+[output]
+method = noncurses
+orientation = bottom
+channels = mono
+mono_option = average
+
+[color]
+gradient = 1
+background = 'default'
+gradient_color_1 = '#d5c871'
+gradient_color_2 = '#ffffff'
+
+[smoothing]
+noise_reduction = 77
